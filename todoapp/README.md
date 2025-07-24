@@ -26,3 +26,9 @@ Generally a good idea for bulding an app is to first build the backend and then 
 10. Create db.js for mongodb
 11. Install mongoose "npm install mongoose"
 12. Always put the mongodb url in .env files for security and we do not show it publicly
+
+
+13. Now we start working on the frontend, navigate to the todoapp cd todoapp
+14, run "npm create vite@latest" to create the react files, and name it "frontend" --> then run the commands as the terminal says
+15. Clear  the app.css and index.css files and also the app.jsx and just print hi there then run "npm run dev"
+16. create a separate folder for components in the src --> then start adding files in it and working on the frontend
