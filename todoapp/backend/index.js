@@ -3,6 +3,7 @@ const { createTodo, updateTodo } = require("./types");
 const { todo } = require("./db");
 const { connect } = require("mongoose");
 const app = express();
+const cors = require("cors");
 
 
 // function validation (req, res,next) {
@@ -18,6 +19,9 @@ const app = express();
 //     };
 // };
 app.use(express.json());
+app.use(cors({
+    origin: "http:/localhost:5173" ///sets origin that only frontend requests from localhost 5173 can access this backend
+}));
 
 //inputs expected:
 //title: string

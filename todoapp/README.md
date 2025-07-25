@@ -32,3 +32,4 @@ Generally a good idea for bulding an app is to first build the backend and then 
 14, run "npm create vite@latest" to create the react files, and name it "frontend" --> then run the commands as the terminal says
 15. Clear  the app.css and index.css files and also the app.jsx and just print hi there then run "npm run dev"
 16. create a separate folder for components in the src --> then start adding files in it and working on the frontend
+17. To fix the Cors erros, cd to backend and run "npm install cors"--. after installing, app.use(cors(), in the index.js in backend)
