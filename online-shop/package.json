@@ -1,0 +1,16 @@
+{
+  "name": "online-shop",
+  "version": "1.0.0",
+  "description": "Online shopping app |(backend based) with two types of end-users;\r Admin and User",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.16.5"
+  }
+}
