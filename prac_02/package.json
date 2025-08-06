@@ -1,0 +1,15 @@
+{
+  "name": "prac_02",
+  "version": "1.0.0",
+  "description": "Q: Create a react app that has a header component that takes title as a prop and renders it inside a div.\r The top level app component renders 2 headers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
