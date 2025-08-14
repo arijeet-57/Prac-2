@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Route, Routes, BrowserRouter, useNavigate } from 'react-router-dom'
-import { Dashboard } from './components/Dashboard'
-import { Landing } from './components/Landing'
+
+const Landing  = React.lazy(() => import('./components/Landing')) 
+const Dashboard  =  React.lazy(() => import('./components/Dashboard')) 
 
 function App() {
   
