@@ -1,0 +1,12 @@
+.characterCard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
