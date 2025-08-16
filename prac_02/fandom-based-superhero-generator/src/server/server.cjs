@@ -30,8 +30,8 @@ const theBoys = [
 ]
 
 app.get("/dc", function(req, res) {
-    const randomIndex = Math.floor(Math.random() * marvel.length);
-    res.json(marvel[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * dc.length);
+    res.json(dc[randomIndex]);
 })
 
 app.get("/marvel", function(req, res) {
@@ -40,8 +40,8 @@ app.get("/marvel", function(req, res) {
 })
 
 app.get("/theBoys", function(req, res) {
-    const randomIndex = Math.floor(Math.random() * marvel.length);
-    res.json(marvel[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * theBoys.length);
+    res.json(theBoys[randomIndex]);
 })
 
 app.listen(3000, () => {
