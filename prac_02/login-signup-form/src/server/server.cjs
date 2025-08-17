@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post("/register", async function(req,res) {
+app.post("/register",userValidate, async function(req,res) {
     const username = req.body.username;
     const password = req.body.password;
 
@@ -17,12 +17,12 @@ app.post("/register", async function(req,res) {
     await newUser.save();
 
     res.json({
-        msg:"User is registered"
+        msg:"User is registered, now move to login..."
     })
 
 })
 
-app.post("/login", userValidate, async function(req, res) {
+app.post("/login", async function(req, res) {
     const {username, password} = req.body;
 
     if(!username || !password) {
@@ -31,8 +31,16 @@ app.post("/login", userValidate, async function(req, res) {
         })
     }
 
+    const existingUser = await user.findOne({username, password});
+
+    if(!existingUser) {
+        return res.json({
+            msg: "Enter valid credentials..."
+        })
+    }
+
     res.json({
-        msg: "Access given..."
+        msg: "Whooooo Login Successfull !"
     })
 })
 
