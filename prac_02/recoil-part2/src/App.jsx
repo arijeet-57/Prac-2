@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { RecoilRoot, useRecoilValue,useRecoilState, useSetRecoilState } from 'recoil'
-import { jobsAtom, messagingAtom, networkAtom, notificationsAtom } from './atoms'
+import { jobsAtom, messagingAtom, networkAtom, notificationsAtom, totalSelector } from './atoms'
 
 function App() {
   return <RecoilRoot>
@@ -17,6 +17,9 @@ function NavBar( ){
   const jobsNotificationCount = useRecoilValue(jobsAtom);
   const [messagingkNotificationCount, setMessagingCount] = useRecoilState(messagingAtom);
   const notificationsCount = useSetRecoilState(notificationsAtom);
+  
+  //if we had to show the total number of all notifications count on the "ME" tab, how to do it? here is a way using selectors
+  const totalCount = useRecoilValue(totalSelector);
 
   return (
     <>
@@ -29,7 +32,7 @@ function NavBar( ){
 
       <button onClick={() => {
         setMessagingCount(c => c+1)
-      }}>Me</button>
+      }}>Me ({totalCount})</button>
     </>
   )
 }
