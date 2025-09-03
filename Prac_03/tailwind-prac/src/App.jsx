@@ -8,11 +8,7 @@ function App() {
 
   return (
     <>
-      <div style={{display: "flex", justifyContent: "center"}}>
-        <div style={{backgroundColor:"red"}}>Yohooo</div>
-        <div style={{backgroundColor:"yellow"}}>Yohooo</div>
-        <div style={{backgroundColor:"green"}}>Yohooo</div>
-      </div>
+      
     </>
   )
 }
