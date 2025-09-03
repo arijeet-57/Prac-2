@@ -77,11 +77,11 @@ function MyComponent() {
 
 function ComponentTwo() {
   useEffect(() => {
-    console.error("Component mountd");
+    console.error("Component mounted");
 
     return () => {
       console.log("Component Unmounted")
-    }
+    } 
   }, []); 
 
   return (
