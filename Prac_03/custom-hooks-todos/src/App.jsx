@@ -1,49 +1,63 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { useEffect } from 'react';
 import axios from 'axios';
 
 //Creating a custom hook for our own
-function useTodos() {
+function useTodos(n) {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-    axios.get("http://localhost:3000/todos")
-    .then(res => {
-      setTodos(res.data);
-      setLoading(false);
-    })}, 3000)
-  }, []);
+    const fetchTodos = () => {
+      axios.get("http://localhost:3000/todos")
+        .then(res => {
+          setTodos(res.data);
+          setLoading(false);
+        })
+        .catch(err => {
+          console.error("Error fetching todos:", err);
+          setLoading(false);
+        });
+    };
 
-  return {todos, loading};
+    // Initial fetch
+    fetchTodos();
+
+    // Periodic fetch
+    const value = setInterval(fetchTodos, n * 1000);
+
+    // Cleanup
+    return () => clearInterval(value);
+  }, [n]);
+
+  return { todos, loading };
 }
 
-function App() { 
+function App() {
+  const { todos, loading } = useTodos(5);
 
-  const {todos, loading} = useTodos();
-
-  if(loading) {
+  if (loading) {
     return <div>
       Loading...
-    </div>
+    </div>;
   }
-//else this below code will return
+
+  // else this below code will return
   return (
     <div>
-      {todos.map(todo => <Todos todo={todo}/>)}
+      {todos.map(todo => <Todos key={todo.id} todo={todo} />)}
     </div>
-  )
+  );
 }
 
-function Todos({todo}) {
+function Todos({ todo }) {
   return <div>
     {todo.title}
     <br />
     {todo.description}
-  </div>
+  </div>;
 }
-export default App
+
+export default App;
