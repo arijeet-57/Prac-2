@@ -44,14 +44,14 @@ function App() {
   const [value, setValue] = useState(0);
   const debouncedValue = useDebounce(value, 500);
  
- if(isOnline) {
-  return <div> I am online</div>
- }
-
+//  if(isOnline) {
+//   return <div> I am online</div>
+//  }
 
   return <div>
     Debounced Value is {debouncedValue}
-    <input type="text" onChange={e = setValue(e.target.value)} />
+    <input type="text" onChange={e => setValue(e.target.value)} />
+
     Offline
   </div>
  }
