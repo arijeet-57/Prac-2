@@ -1,15 +1,18 @@
+
 #include <iostream>
 
 using namespace std;
-
+        
 class Array //defining a class for array that would provide a blue print to work on
-{
-private:  //variables can only be accessed inside the class
-    int *A;
+{           
+private:  //    variables can only be accessed inside the class
+    int *A; 
     int size;
     int length;
+    int x;
 
-public: //can be accessed from outside the class as well
+
+public: //can be     accessed from outside the class as well
     Array(int size) {       //initialising tghe instance for defininf the number of max elements to be stored in an array
         this->size = size;
         A = new int[size];
@@ -29,10 +32,16 @@ public: //can be accessed from outside the class as well
             cout<<A[i]<<" ";
     }
 
+    void append(Array *arr,  int x) { //this will add a element in the end of the arrray
+        if(arr->length<arr->size){
+            arr->A[arr->length++]=x;
+        };
+    };
+
     ~Array() { //this is a destructor , this runs automatically when an object is destroyed
         delete[] A;
-        cout<<"Destroyed Array"<< endl;
-    }
+        cout<<"Destroyed Array"<<endl;
+    };
 
 
 };
@@ -40,7 +49,8 @@ public: //can be accessed from outside the class as well
 int main () {
 
     Array arr(10); //defining the max number of elements that can be input in this array, arr is an object of the class Array
-
+    
+    arr.append(&arr, 10);
     arr.create(); //calling the create function using an object
     arr.display(); //calling the display function using the same arr object
 
