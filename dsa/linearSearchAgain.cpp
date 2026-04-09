@@ -35,16 +35,16 @@ int main () {
     moveToHead(&arr1, 4 );
     display(arr1);
 
-    moveToHead(&arr1, 3 );
-    display(arr1);
+    // moveToHead(&arr1, 3 );
+    // display(arr1);
 
 
-    moveToHead(&arr1, 2 );
-    display(arr1);
+    // moveToHead(&arr1, 2 );
+    // display(arr1);
 
 
-    moveToHead(&arr1, 5 );
-    display(arr1);
+    // moveToHead(&arr1, 5 );
+    // display(arr1);
 
 
     return 0;
