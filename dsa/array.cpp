@@ -13,7 +13,7 @@ private:  //    variables can only be accessed inside the class
 
 
 public: //can be     accessed from outside the class as well
-    Array(int size) {       //initialising tghe instance for defininf the number of max elements to be stored in an array
+    Array(int size) {       //initialising the instance for defining the number of max elements to be stored in an array
         this->size = size;
         A = new int[size];
     }
