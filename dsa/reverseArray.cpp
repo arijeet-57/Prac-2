@@ -36,7 +36,7 @@ void reverseArray(Array *arr){
 void reverseArray2(Array *arr){
     //here we will be swapping the elements with their places inside the array, without needing a second empty array
     for(int i=0,j=arr->length-1;i<j;i++,j--){
-        swap(&arr->A[i], &arr->A[j]);
+        swap(arr->A[i], arr->A[j]);
     };
 };
 
